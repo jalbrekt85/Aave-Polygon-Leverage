@@ -1,0 +1,9 @@
+networks:
+  default: polygon-main-fork
+
+wallets:
+  key: ${PRIVATE_KEY}
+
+dotenv: .env
+
+autofetch_sources: true
