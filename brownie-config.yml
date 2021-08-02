@@ -1,6 +1,18 @@
 networks:
   default: polygon-main-fork
 
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@1.0.2
+  - aave/protocol-v2@1.0.1
+  - OpenZeppelin/openzeppelin-contracts@3.4.0
+
+compiler:
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.0.2'
+      - '@aave=aave/protocol-v2@1.0.1'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0'
+      
 wallets:
   key: ${PRIVATE_KEY}
 

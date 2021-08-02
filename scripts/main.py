@@ -1,11 +1,11 @@
 
 from brownie import network, accounts, config
-
+from scripts.controller import Controller
 # network.connect()
-print(network.show_active())
 
 def main():
-    print(config['wallets']['key'])
+    print(Controller().address)
+    print()
 
 if __name__ == '__main__':
     main()
