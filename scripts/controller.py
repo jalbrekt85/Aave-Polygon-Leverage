@@ -4,6 +4,7 @@ from scripts.utils import *
 
 class Controller:
     def __init__(self, token_data: dict[str, str]):
+        assert all(addr in token_data for addr in ('address', 'amAddress', 'debtAddress'))
         self.account = accounts[0] if network.show_active() == 'polygon-main-fork' else accounts.add(config['wallet']['key'])
         lending_pool = interface.ILendingPoolAddressesProvider('0xd05e3E715d945B59290df0ae8eF85c1BdB684744')
         lending_addr = lending_pool.getLendingPool()
